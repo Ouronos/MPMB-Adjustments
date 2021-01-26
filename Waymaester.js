@@ -21,7 +21,7 @@ RequiredSheetVersion(12.999);
 
 SourceList["PoL:Waymaester"] = {
 	name : "Waymaester : Monks of Gaetor v1.0",
-	abbreviation : "PoL:WayM",
+	abbreviation : "PoL:Waymaester",
 	group : "Points of Light",
 	date : "2021/01/25"
 };
@@ -29,9 +29,9 @@ SourceList["PoL:Waymaester"] = {
 //Waymaester Class - which is based on monk
 
 ClassList["waymaester"] = {
-	regExpSearch : /^(?=.waymaester).*$/i,
+	regExpSearch : /waymaester/i,
 	name : "Waymaester",
-	source : ["PoL: WayM", 0],
+	source : ["PoL: Waymaester", 0],
 	primaryAbility : "\n \u2022 Waymaester: Dexterity and Wisdom;",
 	prereqs : "\n \u2022 Waymaester: Dexterity 13 and Wisdom 13;",
 	die : 8,
@@ -56,13 +56,13 @@ ClassList["waymaester"] = {
 	features : {
 			"unarmored defense" : {
 				name : "Unarmored Defense",
-				source : ["PoL:WayM", 48],
+				source : ["PoL:Waymaester", 48],
 				minlevel : 1,
 				description : "\n   " + "Without armor and no shield, my AC is 10 + Dexterity modifier + Wisdom modifier"
 			},
 			"martial arts" : {
 				name : "Martial Arts",
-				source : ["PoL:WayM", 78],
+				source : ["PoL:Waymaester", 78],
 				minlevel : 1,
 				description : "\n   " + "Waymaester: staves, unarmed strike" + "\n   " + "With these, I can use Dex instead of Str and use the Martial Arts damage die" + "\n   " + "When taking an Attack action with these, I get one unarmed strike as a bonus action",
 				action : ["bonus action", " (with Attack action)"],
@@ -71,7 +71,7 @@ ClassList["waymaester"] = {
 			},
 			"ki" : {
 				name : "Ki",
-				source : ["PoL:WayM", 78],
+				source : ["PoL:Waymaester", 78],
 				minlevel : 2,
 				description : "\n   " + "I can spend ki to fuel special actions (see third page)" + "\n   " + "I need to meditate for at least 30 min of a short rest for that short rest to restore ki",
 				usages : ["", 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
@@ -79,25 +79,25 @@ ClassList["waymaester"] = {
 				extraname : "Ki Feature",
 				"flurry of blows" : {
 					name : "Flurry of Blows",
-					source : ["PoL:WayM", 78],
+					source : ["PoL:Waymaester", 78],
 					description : " [1 ki point]" + "\n   " + "After taking the Attack action, I can make 2 unarmed attacks as a bonus action",
 					action : ["bonus action", " (after Attack action)"]
 				},
 				"patient defense" : {
 					name : "Patient Defense",
-					source : ["PoL:WayM", 78],
+					source : ["PoL:Waymaester", 78],
 					description : " [1 ki point]" + "\n   " + "As a bonus action, I gain my style's AC Bonus (+4) [sustain 1]",
 					action : ["bonus action", ""]
 				},
 				"step of the wind" : {
 					name : "Step of the Wind",
-					source : ["PoL:WayM", 78],
+					source : ["PoL:Waymaester", 78],
 					description : " [1 ki point]" + "\n   " + "As a bonus action, I may shift up to my movement",
 					action : ["bonus action", ""]
 				},
 				"stunning strike" : {
 					name : "Stunning Strike",
-					source : ["PoL:WayM", 79],
+					source : ["PoL:Waymaester", 79],
 					description : " [1 ki point]" + "\n   " + "Creature hit by my melee attack Con saves or it is Stunned 1; this "
 				},
 				eval : "ClassFeatureOptions([\"waymaester\", \"ki\", \"flurry of blows\", \"extra\"]); ClassFeatureOptions([\"waymaester\", \"ki\", \"patient defense\", \"extra\"]); ClassFeatureOptions([\"waymaester\", \"ki\", \"step of the wind\", \"extra\"]);"
@@ -106,7 +106,7 @@ ClassList["waymaester"] = {
 			},
 			"unarmored movement" : {
 				name : "Unarmored Movement",
-				source : ["PoL:WayM", 78],
+				source : ["PoL:Waymaester", 78],
 				minlevel : 2,
 				description : "\n   " + "Speed increases and eventually lets me traverse some surfaces without falling as I move",
 				additional : ["", "+10 ft", "+10 ft", "+10 ft", "+10 ft", "+15 ft", "+15 ft", "+15 ft", "+15 ft; Vertical surfaces and liquids", "+20 ft; Vertical surfaces and liquids", "+20 ft; Vertical surfaces and liquids", "+20 ft; Vertical surfaces and liquids", "+20 ft; Vertical surfaces and liquids", "+25 ft; Vertical surfaces and liquids", "+25 ft; Vertical surfaces and liquids", "+25 ft; Vertical surfaces and liquids", "+25 ft; Vertical surfaces and liquids", "+30 ft; Vertical surfaces and liquids", "+30 ft; Vertical surfaces and liquids", "+30 ft; Vertical surfaces and liquids"],
@@ -116,15 +116,15 @@ ClassList["waymaester"] = {
 				/*changeeval : "if(oldClassLvl.waymaester) {ChangeSpeed(-1 * Number(CurrentClasses.waymaester.features[\"unarmored movement\"].additional[oldClassLvl.waymaester - 1].substring(1,3)))}; try {ChangeSpeed(CurrentClasses.waymaester.features[\"unarmored movement\"].additional[newClassLvl.waymaester - 1].substring(1,3));} catch (err) {};"*/
 				
 			},
-			"subclassfeature3" : {
+			"subclassfeature1" : {
 				name : "Waymaester Focus",
-				source : ["PoL:WayM", 78],
+				source : ["PoL:Waymaester", 78],
 				minlevel : 3,
 				description : "\n   " + "Choose a Waymaester Focus to commit to and put it in the \"Class\" field on page 1" + "\n   " + "Waymaesters only have Way of the Road currently"
 			},
 			"deflect missiles" : {
 				name : "Deflect Missiles",
-				source : ["PoL:WayM", 78],
+				source : ["PoL:Waymaester", 78],
 				minlevel : 3,
 				description : "\n   " + "As a reaction, I can reduce ranged weapon attack damage done to me" + "\n   " + "If I have learned Missile Reversal, I may throw it back (20/60 ft) as a waymaester weapon",
 				action : ["reaction", ""],
@@ -132,7 +132,7 @@ ClassList["waymaester"] = {
 			},
 			"slow fall" : {
 				name : "Slow Fall",
-				source : ["PoL:WayM", 78],
+				source : ["PoL:Waymaester", 78],
 				minlevel : 4,
 				description : "\n   " + "As a reaction, I can reduce any falling damage I take by five times my waymaester level",
 				additional : ["", "", "", "20 less falling damage", "25 less falling damage", "30 less falling damage", "35 less falling damage", "40 less falling damage", "45 less falling damage", "50 less falling damage", "55 less falling damage", "60 less falling damage", "65 less falling damage", "70 less falling damage", "75 less falling damage", "80 less falling damage", "85 less falling damage", "90 less falling damage", "95 less falling damage", "100 less falling damage"],
@@ -140,7 +140,7 @@ ClassList["waymaester"] = {
 			},
 			"ki-empowered strikes" : {
 				name : "Ki-Empowered Strikes",
-				source : ["PoL:WayM", 79],
+				source : ["PoL:Waymaester", 79],
 				minlevel : 6,
 				description : "\n   " + "My unarmed strikes count as magical for overcoming resistances and immunities"
 			},
@@ -154,21 +154,21 @@ ClassList["waymaester"] = {
 			}, 
 			"evasion" : {
 				name : "Evasion",
-				source : ["PoL:WayM", 79],
+				source : ["PoL:Waymaester", 79],
 				minlevel : 7,
 				description : "\n   " + "My Dexterity saves vs. areas of effect negate damage on success and halve it on failure",
 				save : "Dex save vs. area effects: fail \u2015 half dmg, success \u2015 no dmg"
 			},
 			"travellers peace" : {
 				name : "Traveller's peace",
-				source : ["PoL:WayM", 79],
+				source : ["PoL:Waymaester", 79],
 				minlevel : 7,
 				description : "\n   " + "As an action, I can end one effect on me that causes me to be charmed, frightened, movement impaired, or may attempt to break stun",
 				action : ["action", ""]
 			},
 			"surefooted" : {
 				name : "Surefooted",
-				source : ["PoL:WayM", 79],
+				source : ["PoL:Waymaester", 79],
 				minlevel : 10,
 				description : typeA4 ? "\n   " + "My mastery of the ki flowing through me makes me immune to stun and resistant to poisons and diseases" : " [" + "I am resistant to poison and disease" + "]",
 				save : "Resistant to poison and disease"
@@ -183,13 +183,13 @@ ClassList["waymaester"] = {
 			}, 
 			"travellers speech" : {
 				name : "Traveller's Speech",
-				source : ["PoL:WayM", 79],
+				source : ["PoL:Waymaester", 79],
 				minlevel : 13,
 				description : "\n   " + "I can understand all spoken languages and all creatures with a language understand me"
 			},
 			"travellers luck" : {
 				name : "Traveller's Luck",
-				source : ["PoL:WayM", 79],
+				source : ["PoL:Waymaester", 79],
 				minlevel : 14,
 				description : "\n   " + " [1 ki point]" + "\n   " + "I may reroll any save, skill check, or attack that is not a critical fail."
 			},
@@ -203,13 +203,13 @@ ClassList["waymaester"] = {
 			}, 
 			"travellers self" : {
 				name : "Traveller's Self",
-				source : ["PoL:WayM", 79],
+				source : ["PoL:Waymaester", 79],
 				minlevel : 15,
 				description : "\n   " + "I don't require food or water; I don't suffer age penalties and can't be aged magically"
 			},
 			"unseen traveller" : {
 				name : "Unseen Traveller",
-				source : ["PoL:WayM", 79],
+				source : ["PoL:Waymaester", 79],
 				minlevel : 18,
 				description : "\n   " + "Be invisible and resist non-force damage for 1 min or cast Astral Projection on self",
 				additional : "Invisible: 4 ki point; Astral Projection: 8 ki points",
@@ -227,7 +227,7 @@ ClassList["waymaester"] = {
 			}, 
 			"perfect self" : {
 				name : "Perfect Self",
-				source : ["PoL:WayM", 79],
+				source : ["PoL:Waymaester", 79],
 				minlevel : 20,
 				description : "\n   " + "When I roll AP and my natural roll is higher than my Ki, I gain that many Ki points."
 			}
@@ -236,24 +236,25 @@ ClassList["waymaester"] = {
 
 //Waymaester Subclass - Way of the Road
 
+	
 	AddSubClass(
 		"waymaester",
 		"way of the road",
 		{
 	regExpSearch : /^(?=.*road).$/i,
 	subname : "Way of the Road",
-	fullname : "Traveller",
-	source : ["PoL:WayM", 1],
+	source : ["PoL:Waymaester", 1],
 	features : {
 		"subclassfeature3" : {
 			name : "Traveller's Fist",
-			source : ["PoL:WayM", 2],
+			source : ["PoL:Waymaester", 2],
 			minlevel : 3,
-			description : "\n   " + "When I hit a creature with a Flurry of Blows attack I can do one of the following:" + "\n    - " + "It has to make a Dexterity save or be knocked prone" + "\n    - " + "It has to make a Constitution save or it can't take reactions [unsustain 1]"
+			description : "\n   " + "When I hit a creature with a Flurry of Blows attack I can do one of the following:" + "\n    - " + "It has to make a Dexterity save or be knocked prone" + "\n    - " + "It has to make a Constitution save or it can't take reactions [unsustain 1]",
+			action : ["bonus action", "with Flurry of Blows"]
 		},
 		"subclassfeature6" : {
 			name : "Restful Road",
-			source : ["PoL:WayM", 3],
+			source : ["PoL:Waymaester", 3],
 			minlevel : 6,
 			description : "\n   " + "As an action, I can spend ki equal to three times my exhaustion level to reduce my exhaustion one level or spend 2 ki points to regain hit points equal to two times my waymaester level",
 			additional : ["", "", "", "", "", "12 hit points", "14 hit points", "16 hit points", "18 hit points", "20 hit points", "22 hit points", "24 hit points", "26 hit points", "28 hit points", "30 hit points", "32 hit points", "34 hit points", "36 hit points", "38 hit points", "40 hit points"],
@@ -263,16 +264,16 @@ ClassList["waymaester"] = {
 		},
 		"subclassfeature11" : {
 			name : "Traveller's Tranquility",
-			source : ["PoL:WayM", 4],
+			source : ["PoL:Waymaester", 4],
 			minlevel : 11,
 			description : "\n   " + "After a long rest, I gain the effect of a Sanctuary spell until a next long rest (PHB 272)",
 		},
 		"subclassfeature17" : {
 			name : "Traveller's Companion",
-			source : ["PoL:WayM", 5],
+			source : ["PoL:Waymaester", 5],
 			minlevel : 17,
 			description : "\n   " + "By spending an hour in meditation with another I create a Traveller's Link. I, and they, may use this link for mental communication when not in combat. I may, by meditating on this link for an hour, teleport without error to anywhere within one mile of their location"
 		}
 	}
-} );
+};
 
