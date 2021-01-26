@@ -10,5 +10,5 @@ File [-2018 Custom Code Adjusted] is the main work that I need help with adjusti
  I will be reviewing all assistance given in the hopes of learning a thing or three, as well.
  Thank you, everyone, who are at least looking at this personal project.
 
-Talent Trees and Talent Trees 2 are one document that have been split for import.
+Talent Trees Complete does need some love, but should not need any updating to be v13.x compliant.
 Notes of what I am looking for help with are in comments and preceeded by ==> 
